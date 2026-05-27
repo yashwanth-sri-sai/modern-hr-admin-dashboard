@@ -10,7 +10,7 @@
       "department": "Security",
       "status": "active",
       "createdAt": "2024-01-15T08:00:00.000Z",
-      "lastLogin": "2026-05-27T13:22:57.067Z",
+      "lastLogin": "2026-05-27T13:57:39.300Z",
       "employeeId": "EMP-1001",
       "phone": "+91 98450 12345",
       "officeLocation": "Hyderabad",
@@ -435,6 +435,16 @@
       "ipAddress": null,
       "status": "success",
       "timestamp": "2026-05-27T13:25:43.514Z"
+    },
+    {
+      "id": "f2fc85f1-7d7e-4ce1-8303-17643cec1c1b",
+      "action": "login",
+      "description": "User Arjun Mehta logged in",
+      "userId": "1",
+      "username": "admin",
+      "ipAddress": null,
+      "status": "success",
+      "timestamp": "2026-05-27T13:57:39.330Z"
     }
   ]
 }
