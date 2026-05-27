@@ -5,13 +5,13 @@ An enterprise-grade, high-performance SaaS admin dashboard built as a showcase f
 ## 📸 Screenshots
 
 ### Dashboard Experience
-![Dashboard Screenshot](./screenshots/dashboard.png)
+![Dashboard Screenshot](./screenshots/Screenshot%202026-05-27%20190819.png)
 
 ### Profile & Account Management
-![Profile Screenshot](./screenshots/profile.png)
+![Profile Screenshot](./screenshots/Screenshot%202026-05-27%20190847.png)
 
 ### Cinematic Enterprise Authentication
-![Login Screenshot](./screenshots/login.png)
+![Login Screenshot](./screenshots/Screenshot%202026-05-27%20190927.png)
 
 ---
 
