@@ -11,6 +11,7 @@ import { AuthService } from '../../../core/services/auth.service';
 import { SkeletonLoaderComponent } from '../skeleton-loader/skeleton-loader.component';
 import { Record } from '../../models/api-response.model';
 import { ActivityLog } from '../../models/activity.model';
+import { environment } from '../../../../environments/environment';
 
 interface SearchResult {
   id: string;
@@ -344,18 +345,18 @@ export class GlobalSearchComponent implements OnInit, OnDestroy {
 
     // Group parallel API requests
     const requests: { [key: string]: any } = {
-      records: this.http.get<{ data: Record[] }>('/api/v1/records').pipe(
+      records: this.http.get<{ data: Record[] }>(`${environment.apiUrl}/records`).pipe(
         map(res => res.data),
         catchError(() => of([]))
       ),
-      activities: this.http.get<{ data: ActivityLog[] }>('/api/v1/activity').pipe(
+      activities: this.http.get<{ data: ActivityLog[] }>(`${environment.apiUrl}/activity`).pipe(
         map(res => res.data),
         catchError(() => of([]))
       )
     };
 
     if (isAdmin) {
-      requests['users'] = this.http.get<{ data: any[] }>('/api/v1/users').pipe(
+      requests['users'] = this.http.get<{ data: any[] }>(`${environment.apiUrl}/users`).pipe(
         map(res => res.data),
         catchError(() => of([]))
       );

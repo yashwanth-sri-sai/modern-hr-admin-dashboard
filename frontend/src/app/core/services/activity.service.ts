@@ -3,10 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { ActivityLog } from '../../shared/models/activity.model';
 import { ApiResponse } from '../../shared/models/api-response.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class ActivityService {
-  private readonly API = '/api/v1/activity';
+  private readonly API = `${environment.apiUrl}/activity`;
   private http = inject(HttpClient);
 
   getActivities(): Observable<ActivityLog[]> {

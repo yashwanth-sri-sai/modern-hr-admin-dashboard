@@ -3,11 +3,12 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ApiResponse, DashboardStats, Record } from '../../shared/models/api-response.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class DashboardService {
-  private readonly USERS_API = '/api/v1/users';
-  private readonly RECORDS_API = '/api/v1/records';
+  private readonly USERS_API = `${environment.apiUrl}/users`;
+  private readonly RECORDS_API = `${environment.apiUrl}/records`;
   private http = inject(HttpClient);
 
   getStats(): Observable<DashboardStats> {

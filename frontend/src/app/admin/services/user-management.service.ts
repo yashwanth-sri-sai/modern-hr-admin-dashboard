@@ -4,10 +4,11 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ApiResponse } from '../../shared/models/api-response.model';
 import { User, CreateUserDto, UpdateUserDto } from '../../shared/models/user.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class UserManagementService {
-  private readonly API = '/api/v1/users';
+  private readonly API = `${environment.apiUrl}/users`;
   private http = inject(HttpClient);
 
   getUsers(filters?: { search?: string; role?: string; status?: string }): Observable<User[]> {

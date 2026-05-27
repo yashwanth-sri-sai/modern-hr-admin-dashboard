@@ -4,10 +4,11 @@ import { Router } from '@angular/router';
 import { Observable, tap, map } from 'rxjs';
 import { LoginRequest, LoginResponse, AuthUser } from '../../shared/models/auth.model';
 import { ApiResponse } from '../../shared/models/api-response.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private readonly API = '/api/v1/auth';
+  private readonly API = `${environment.apiUrl}/auth`;
   private readonly TOKEN_KEY = 'nsq_auth_token';
   private readonly USER_KEY = 'nsq_auth_user';
 
