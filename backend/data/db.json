@@ -1,0 +1,440 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Arjun Mehta",
+      "username": "admin",
+      "email": "arjun.mehta@nsqtech.com",
+      "password": "$2a$10$pHHbSObtSz35REVEoaKUSukpDQC3CyoDAoELPJOKp4g0jJI5ENumG",
+      "role": "admin",
+      "department": "Security",
+      "status": "active",
+      "createdAt": "2024-01-15T08:00:00.000Z",
+      "lastLogin": "2026-05-27T13:22:57.067Z",
+      "employeeId": "EMP-1001",
+      "phone": "+91 98450 12345",
+      "officeLocation": "Hyderabad",
+      "reportingManager": "Executive Board",
+      "joinDate": "2024-01-15",
+      "preferences": {
+        "emailAlerts": false,
+        "activityAlerts": false
+      }
+    },
+    {
+      "id": "2",
+      "name": "Sarah Johnson",
+      "username": "yash",
+      "email": "sarah.johnson@nsqtech.com",
+      "password": "$2a$10$8DFBEsrO7NUixiJfN.g.n.ffNeDSpNjkrS9RMVooEBEfGZpZo37Fa",
+      "role": "user",
+      "department": "Human Resources",
+      "status": "active",
+      "createdAt": "2024-02-10T09:30:00.000Z",
+      "lastLogin": "2026-05-27T11:29:02.215Z",
+      "employeeId": "EMP-2187",
+      "phone": "+44 20 7946 0958",
+      "officeLocation": "London",
+      "reportingManager": "Arjun Mehta",
+      "joinDate": "2024-02-10",
+      "preferences": {
+        "emailAlerts": false,
+        "activityAlerts": false
+      }
+    },
+    {
+      "id": "3",
+      "name": "Rahul Verma",
+      "username": "rahul",
+      "email": "rahul.verma@nsqtech.com",
+      "password": "$2a$10$DLg3fQyUxhKf0ho0eSENc.ttNlyRU/UV0/NVR0Z0SWK99bHjTjPzq",
+      "role": "user",
+      "department": "Engineering",
+      "status": "active",
+      "createdAt": "2024-02-18T10:00:00.000Z",
+      "lastLogin": null,
+      "employeeId": "EMP-1042",
+      "phone": "+91 98765 43210",
+      "officeLocation": "Bengaluru",
+      "reportingManager: ": "Arjun Mehta",
+      "joinDate": "2024-02-18"
+    },
+    {
+      "id": "4",
+      "name": "Ananya Singh",
+      "username": "ananya",
+      "email": "ananya.singh@nsqtech.com",
+      "password": "$2a$10$McUbVrup9neg9gkACRPDHusLub6PaGMV1u0wbMfK0luvsMsJ1q95q",
+      "role": "user",
+      "department": "Operations",
+      "status": "pending",
+      "createdAt": "2024-03-05T11:00:00.000Z",
+      "lastLogin": null,
+      "employeeId": "EMP-1089",
+      "phone": "+91 91234 56789",
+      "officeLocation": "Mumbai",
+      "reportingManager": "Sarah Johnson",
+      "joinDate": "2024-03-05"
+    },
+    {
+      "id": "5",
+      "name": "Karan Mehta",
+      "username": "karan",
+      "email": "karan.mehta@nsqtech.com",
+      "password": "$2a$10$A.SqYkJJeFXiC2F4AGmQZO9HgIa/ZZB.HoiWxryJKQLuPMmMhksJa",
+      "role": "admin",
+      "department": "IT Support",
+      "status": "active",
+      "createdAt": "2024-03-20T09:00:00.000Z",
+      "lastLogin": null,
+      "employeeId": "EMP-1002",
+      "phone": "+91 88888 77777",
+      "officeLocation": "Pune",
+      "reportingManager": "Arjun Mehta",
+      "joinDate": "2024-03-20"
+    },
+    {
+      "id": "6",
+      "name": "Priya Nair",
+      "username": "priya",
+      "email": "priya.nair@nsqtech.com",
+      "password": "$2a$10$WMa7aGrHMpIEGImRqdIQXuYLzzPNvtMr8exiuqp81Zt6pWd/XFl2G",
+      "role": "user",
+      "department": "Compliance",
+      "status": "on-leave",
+      "createdAt": "2024-04-01T08:45:00.000Z",
+      "lastLogin": null,
+      "employeeId": "EMP-3045",
+      "phone": "+65 6789 0123",
+      "officeLocation": "Singapore",
+      "reportingManager": "Arjun Mehta",
+      "joinDate": "2024-04-01"
+    },
+    {
+      "id": "7",
+      "name": "Michael Chen",
+      "username": "michael",
+      "email": "michael.chen@nsqtech.com",
+      "password": "$2a$10$9eITSntvpZkVH7mkIGytL.eQXUcX/3Sct44zlp8iS9K6wTlXSGdga",
+      "role": "user",
+      "department": "Finance",
+      "status": "active",
+      "createdAt": "2024-04-12T10:30:00.000Z",
+      "lastLogin": null,
+      "employeeId": "EMP-4091",
+      "phone": "+65 9123 4567",
+      "officeLocation": "Singapore",
+      "reportingManager": "Sarah Johnson",
+      "joinDate": "2024-04-12"
+    },
+    {
+      "id": "8",
+      "name": "Daniel Brooks",
+      "username": "daniel",
+      "email": "daniel.brooks@nsqtech.com",
+      "password": "$2a$10$ArFVBteAJv1YqslNg2QeR.9SvfziyUKXUk/7Z6WMvAwA8USWsmQNe",
+      "role": "user",
+      "department": "Customer Success",
+      "status": "suspended",
+      "createdAt": "2024-04-22T09:15:00.000Z",
+      "lastLogin": null,
+      "employeeId": "EMP-5082",
+      "phone": "+44 1632 960012",
+      "officeLocation": "London",
+      "reportingManager": "Sarah Johnson",
+      "joinDate": "2024-04-22"
+    },
+    {
+      "id": "9",
+      "name": "Emma Rodriguez",
+      "username": "emma",
+      "email": "emma.rodriguez@nsqtech.com",
+      "password": "$2a$10$50znf6JMY0H9uTQv4t4.LeLz4URfTy/arUVEEDTUHnyab171nEJSy",
+      "role": "user",
+      "department": "Product",
+      "status": "active",
+      "createdAt": "2024-05-03T11:00:00.000Z",
+      "lastLogin": null,
+      "employeeId": "EMP-6023",
+      "phone": "+44 1632 960085",
+      "officeLocation": "London",
+      "reportingManager": "Arjun Mehta",
+      "joinDate": "2024-05-03"
+    },
+    {
+      "id": "10",
+      "name": "Sophia Kim",
+      "username": "sophia",
+      "email": "sophia.kim@nsqtech.com",
+      "password": "$2a$10$Axzlxee43VGPYquDc05Psu4tIn5dqjezaU3bEqdkKQgjdaoIpOxay",
+      "role": "user",
+      "department": "Security",
+      "status": "offline",
+      "createdAt": "2024-05-14T08:30:00.000Z",
+      "lastLogin": null,
+      "employeeId": "EMP-1104",
+      "phone": "+65 8234 5678",
+      "officeLocation": "Singapore",
+      "reportingManager": "Arjun Mehta",
+      "joinDate": "2024-05-14"
+    }
+  ],
+  "records": [
+    {
+      "id": "r1",
+      "title": "Employment Verification — Sarah Johnson",
+      "category": "Compliance",
+      "status": "completed",
+      "priority": "high",
+      "assignedTo": "Priya Nair",
+      "createdAt": "2026-05-20T10:00:00.000Z"
+    },
+    {
+      "id": "r2",
+      "title": "Onboarding Checklist — Michael Chen",
+      "category": "Human Resources",
+      "status": "in-progress",
+      "priority": "critical",
+      "assignedTo": "Sarah Johnson",
+      "createdAt": "2026-05-22T09:00:00.000Z"
+    },
+    {
+      "id": "r3",
+      "title": "Identity Document Audit — EMP-1042",
+      "category": "Compliance",
+      "status": "in-progress",
+      "priority": "high",
+      "assignedTo": "Priya Nair",
+      "createdAt": "2026-05-24T11:00:00.000Z"
+    },
+    {
+      "id": "r4",
+      "title": "ISO 27001 Security Clearance",
+      "category": "Security",
+      "status": "completed",
+      "priority": "critical",
+      "assignedTo": "Sophia Kim",
+      "createdAt": "2026-05-25T08:00:00.000Z"
+    },
+    {
+      "id": "r5",
+      "title": "Background Screening — Daniel Brooks",
+      "category": "Compliance",
+      "status": "completed",
+      "priority": "medium",
+      "assignedTo": "Priya Nair",
+      "createdAt": "2026-05-18T10:00:00.000Z"
+    },
+    {
+      "id": "r6",
+      "title": "Academic Credential Check — EMP-2187",
+      "category": "Operations",
+      "status": "completed",
+      "priority": "high",
+      "assignedTo": "Rahul Verma",
+      "createdAt": "2026-05-19T09:30:00.000Z"
+    },
+    {
+      "id": "r7",
+      "title": "Right to Work Verification — Emma Rodriguez",
+      "category": "Compliance",
+      "status": "pending",
+      "priority": "medium",
+      "assignedTo": "Priya Nair",
+      "createdAt": "2026-05-26T08:00:00.000Z"
+    },
+    {
+      "id": "r8",
+      "title": "Compliance Report Export — Q2 2026",
+      "category": "Finance",
+      "status": "in-progress",
+      "priority": "high",
+      "assignedTo": "Michael Chen",
+      "createdAt": "2026-05-27T05:00:00.000Z"
+    },
+    {
+      "id": "r9",
+      "title": "IT Access Provisioning — Hyderabad Batch",
+      "category": "IT Support",
+      "status": "pending",
+      "priority": "medium",
+      "assignedTo": "Karan Mehta",
+      "createdAt": "2026-05-27T06:30:00.000Z"
+    },
+    {
+      "id": "r10",
+      "title": "Reference Check Audit — Priya Nair",
+      "category": "Human Resources",
+      "status": "completed",
+      "priority": "low",
+      "assignedTo": "Sarah Johnson",
+      "createdAt": "2026-05-15T09:00:00.000Z"
+    }
+  ],
+  "activities": [
+    {
+      "id": "act1",
+      "action": "record_update",
+      "description": "Sarah Johnson updated compliance records",
+      "userId": "2",
+      "username": "yash",
+      "status": "success",
+      "timestamp": "2026-05-27T13:16:50.000Z"
+    },
+    {
+      "id": "act2",
+      "action": "record_update",
+      "description": "Rahul Verma approved employee verification for EMP-1042",
+      "userId": "3",
+      "username": "rahul",
+      "status": "success",
+      "timestamp": "2026-05-27T13:03:50.000Z"
+    },
+    {
+      "id": "act3",
+      "action": "record_update",
+      "description": "Michael Chen exported compliance audit report",
+      "userId": "7",
+      "username": "michael",
+      "status": "success",
+      "timestamp": "2026-05-27T12:18:50.000Z"
+    },
+    {
+      "id": "act4",
+      "action": "user_role_update",
+      "description": "Priya Nair modified user permissions for Sophia Kim",
+      "userId": "6",
+      "username": "priya",
+      "status": "success",
+      "timestamp": "2026-05-27T10:18:50.000Z"
+    },
+    {
+      "id": "act5",
+      "action": "login",
+      "description": "Emma Rodriguez logged in from Hyderabad Office",
+      "userId": "9",
+      "username": "emma",
+      "status": "success",
+      "timestamp": "2026-05-27T08:18:50.000Z"
+    },
+    {
+      "id": "act6",
+      "action": "record_update",
+      "description": "Daniel Brooks resolved verification issue for Arjun Mehta",
+      "userId": "8",
+      "username": "daniel",
+      "status": "success",
+      "timestamp": "2026-05-26T13:18:50.000Z"
+    },
+    {
+      "id": "263b8e90-2994-4388-b835-ae9187076663",
+      "action": "login",
+      "description": "User Arjun Mehta logged in",
+      "userId": "1",
+      "username": "admin",
+      "ipAddress": null,
+      "status": "success",
+      "timestamp": "2026-05-27T08:21:45.994Z"
+    },
+    {
+      "id": "83cfdcd3-078e-4f41-a52e-ff9307bf0647",
+      "action": "login",
+      "description": "User Sarah Johnson logged in",
+      "userId": "2",
+      "username": "yash",
+      "ipAddress": null,
+      "status": "success",
+      "timestamp": "2026-05-27T08:23:21.154Z"
+    },
+    {
+      "id": "e77f26a3-6b77-4bae-8593-61d996332ed4",
+      "action": "login",
+      "description": "User Sarah Johnson logged in",
+      "userId": "2",
+      "username": "yash",
+      "ipAddress": null,
+      "status": "success",
+      "timestamp": "2026-05-27T08:40:18.517Z"
+    },
+    {
+      "id": "4dd07bb4-aded-48bd-a906-43330a1cf326",
+      "action": "login",
+      "description": "User Arjun Mehta logged in",
+      "userId": "1",
+      "username": "admin",
+      "ipAddress": null,
+      "status": "success",
+      "timestamp": "2026-05-27T08:40:32.250Z"
+    },
+    {
+      "id": "0422c6fa-be6b-4435-9d1c-ee0816185d85",
+      "action": "login",
+      "description": "User Arjun Mehta logged in",
+      "userId": "1",
+      "username": "admin",
+      "ipAddress": null,
+      "status": "success",
+      "timestamp": "2026-05-27T11:04:18.022Z"
+    },
+    {
+      "id": "c2be2fa1-ab20-4935-93da-16eec295b6a2",
+      "action": "login",
+      "description": "User Sarah Johnson logged in",
+      "userId": "2",
+      "username": "yash",
+      "ipAddress": null,
+      "status": "success",
+      "timestamp": "2026-05-27T11:29:02.256Z"
+    },
+    {
+      "id": "d43a1e5a-cf77-42af-a664-2749b642176b",
+      "action": "login",
+      "description": "User Arjun Mehta logged in",
+      "userId": "1",
+      "username": "admin",
+      "ipAddress": null,
+      "status": "success",
+      "timestamp": "2026-05-27T11:30:54.125Z"
+    },
+    {
+      "id": "6b2e1eb6-8506-45e4-9408-856f8ef097a5",
+      "action": "login",
+      "description": "User Arjun Mehta logged in",
+      "userId": "1",
+      "username": "admin",
+      "ipAddress": null,
+      "status": "success",
+      "timestamp": "2026-05-27T11:35:07.521Z"
+    },
+    {
+      "id": "9a9d21a9-fc4f-41ce-9c74-d352c53307ff",
+      "action": "login",
+      "description": "User Arjun Mehta logged in",
+      "userId": "1",
+      "username": "admin",
+      "ipAddress": null,
+      "status": "success",
+      "timestamp": "2026-05-27T13:08:20.683Z"
+    },
+    {
+      "id": "44738772-b21f-4f76-a846-5f6fd335d638",
+      "action": "login",
+      "description": "User Arjun Mehta logged in",
+      "userId": "1",
+      "username": "admin",
+      "ipAddress": null,
+      "status": "success",
+      "timestamp": "2026-05-27T13:22:57.109Z"
+    },
+    {
+      "id": "47559418-3d5a-4251-9452-6207c2a647c1",
+      "action": "record_update",
+      "description": "Arjun Mehta changed status of \"ISO 27001 Security Clearance\" to \"completed\"",
+      "userId": "1",
+      "username": "admin",
+      "ipAddress": null,
+      "status": "success",
+      "timestamp": "2026-05-27T13:25:43.514Z"
+    }
+  ]
+}

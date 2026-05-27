@@ -1,0 +1,223 @@
+// ─── Enterprise typography & spacing scale ───────────────────────────────────
+:root {
+  --font-display:  'Inter', system-ui, sans-serif;
+  --font-body:     'Inter', system-ui, sans-serif;
+
+  --text-xs:   0.6875rem;  // 11px
+  --text-sm:   0.8125rem;  // 13px
+  --text-base: 0.875rem;   // 14px
+  --text-md:   1rem;       // 16px
+  --text-lg:   1.125rem;   // 18px
+  --text-xl:   1.375rem;   // 22px
+  --text-2xl:  1.75rem;    // 28px
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  20px;
+  --radius-full: 9999px;
+
+  --shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.12);
+  --shadow-md:  0 4px 16px rgba(0, 0, 0, 0.18);
+  --shadow-lg:  0 12px 40px rgba(0, 0, 0, 0.28);
+  --shadow-lift: 0 8px 24px rgba(99, 102, 241, 0.18);
+
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 280ms;
+  --duration-slow: 400ms;
+
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+:root.light-theme {
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --shadow-lift: 0 8px 24px rgba(79, 70, 229, 0.12);
+}
+
+// ─── Theme transition (no flash) ───────────────────────────────────────────────
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition:
+    background-color 0.35s var(--ease-standard),
+    color 0.35s var(--ease-standard),
+    border-color 0.35s var(--ease-standard),
+    box-shadow 0.35s var(--ease-standard) !important;
+}
+
+// ─── Micro-interactions ──────────────────────────────────────────────────────
+.interactive-lift {
+  transition: transform var(--duration-normal) var(--ease-out-expo),
+    box-shadow var(--duration-normal) var(--ease-out-expo);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+.btn-premium {
+  transition: transform var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-normal) var(--ease-standard);
+
+  &:hover:not([disabled]) {
+    transform: translateY(-1px);
+  }
+  &:active:not([disabled]) {
+    transform: translateY(0);
+  }
+}
+
+.table-row-premium {
+  transition: background var(--duration-fast) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
+
+  &:hover td {
+    background: rgba(99, 102, 241, 0.04) !important;
+  }
+}
+
+// ─── Filter chips ────────────────────────────────────────────────────────────
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: 0 var(--space-6) var(--space-4);
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--glass-bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+  user-select: none;
+
+  mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    border-color: rgba(99, 102, 241, 0.35);
+    color: var(--text-primary);
+  }
+
+  &.active {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: rgba(99, 102, 241, 0.4);
+    color: #818cf8;
+  }
+}
+
+// ─── Page route host ─────────────────────────────────────────────────────────
+.route-page {
+  display: block;
+  min-height: 100%;
+}
+
+// ─── Premium snackbar variants ───────────────────────────────────────────────
+.snack-premium .mdc-snackbar__surface {
+  min-width: 280px;
+  padding: 4px 8px;
+  backdrop-filter: blur(12px);
+}
+
+.snack-error .mdc-snackbar__surface {
+  background: rgba(239, 68, 68, 0.14) !important;
+  border-color: rgba(239, 68, 68, 0.35) !important;
+}
+.snack-error .mdc-snackbar__label {
+  color: #fca5a5 !important;
+}
+
+.snack-info .mdc-snackbar__surface {
+  background: rgba(59, 130, 246, 0.12) !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+.snack-info .mdc-snackbar__label {
+  color: #93c5fd !important;
+}
+
+.snack-warning .mdc-snackbar__surface {
+  background: rgba(245, 158, 11, 0.12) !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+}
+.snack-warning .mdc-snackbar__label {
+  color: #fcd34d !important;
+}
+
+// ─── Dialog polish ───────────────────────────────────────────────────────────
+.nsq-dialog .mat-mdc-dialog-container .mat-mdc-dialog-surface {
+  animation: dialogIn 280ms var(--ease-out-expo);
+}
+
+@keyframes dialogIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+// ─── Mobile overlay ──────────────────────────────────────────────────────────
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+  z-index: 90;
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-standard);
+
+  &.visible {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .shell .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform var(--duration-normal) var(--ease-out-expo);
+    box-shadow: var(--shadow-lg);
+
+    &.mobile-open {
+      transform: translateX(0);
+    }
+
+    &.collapsed {
+      width: 240px;
+      min-width: 240px;
+    }
+  }
+}

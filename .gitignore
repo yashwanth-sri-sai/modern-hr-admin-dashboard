@@ -1,0 +1,35 @@
+# Dependency Directories
+node_modules/
+jspm_packages/
+web_modules/
+
+# Local Environment Variables
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.staging
+
+# Angular Compilation & Build Outputs
+.angular/
+dist/
+tmp/
+out-of-memory.log
+*.log
+
+# Editor & OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Sandbox & Test profiles
+chrome-profile/
+browser_recordings/
+scratch/
+test-login.js
