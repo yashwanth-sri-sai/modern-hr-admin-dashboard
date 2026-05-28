@@ -125,15 +125,15 @@ const DEPARTMENTS = [
           (click)="onSubmit()"
           [disabled]="form.invalid || isLoading()"
         >
-          @if (isLoading()) {
-            <mat-spinner diameter="18" />
-            <span>{{ data.mode === 'edit' ? 'Saving...' : 'Creating...' }}</span>
-          } @else {
-            <ng-container>
+          <div class="btn-content">
+            @if (isLoading()) {
+              <mat-spinner diameter="18" />
+              <span>{{ data.mode === 'edit' ? 'Saving...' : 'Creating...' }}</span>
+            } @else {
               <mat-icon>{{ data.mode === 'edit' ? 'save' : 'add' }}</mat-icon>
               <span>{{ data.mode === 'edit' ? 'Save Changes' : 'Create User' }}</span>
-            </ng-container>
-          }
+            }
+          </div>
         </button>
       </mat-dialog-actions>
     </div>
@@ -173,7 +173,7 @@ const DEPARTMENTS = [
     mat-dialog-actions {
       padding: 12px 24px 20px !important;
       gap: 8px;
-      button { display: flex; align-items: center; gap: 6px; }
+      .btn-content { display: flex; align-items: center; gap: 6px; }
       mat-spinner { display: inline-block; }
     }
   `],
