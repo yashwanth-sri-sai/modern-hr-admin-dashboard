@@ -3,10 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { interval, Subscription, startWith, switchMap, catchError, of } from 'rxjs';
 import { NotificationService } from './notification.service';
 
+import { environment } from '../../../environments/environment';
+
 @Injectable({ providedIn: 'root' })
 export class ApiHealthService {
   private http = inject(HttpClient);
   private notifications = inject(NotificationService);
+  private readonly healthUrl = environment.apiUrl.replace('/v1', '') + '/health';
 
   status = signal<'checking' | 'connected' | 'offline'>('checking');
   private pollSub?: Subscription;
@@ -22,7 +25,7 @@ export class ApiHealthService {
       .pipe(
         startWith(0),
         switchMap(() =>
-          this.http.get<{ success: boolean }>('/api/health').pipe(
+          this.http.get<{ success: boolean }>(this.healthUrl).pipe(
             catchError(() => of({ success: false }))
           )
         )
@@ -52,7 +55,7 @@ export class ApiHealthService {
   }
 
   checkImmediately(): void {
-    this.http.get<{ success: boolean }>('/api/health').pipe(
+    this.http.get<{ success: boolean }>(this.healthUrl).pipe(
       catchError(() => of({ success: false }))
     ).subscribe((res) => {
       this.status.set(res && res.success ? 'connected' : 'offline');
