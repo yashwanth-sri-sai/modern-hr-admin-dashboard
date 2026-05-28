@@ -1,165 +1,136 @@
-# Modern HR Admin Dashboard — Enterprise SaaS Portal
+<div align="center">
+  <h1>🚀 NSQTech Enterprise HR & Admin Dashboard</h1>
+  <p>A full-stack, highly scalable, enterprise-grade admin portal featuring JWT authentication, real-time metrics, dynamic user management, and an aesthetic dark-themed UI built with Angular and Node.js.</p>
 
-An enterprise-grade, high-performance SaaS admin dashboard built as a showcase for modern frontend engineering. This portal features a standalone Angular 21 architecture with Signals, a secured Node.js/Express.js backend, role-based access control (RBAC), sophisticated UI/UX motion design, and robust security protections.
+  <p>
+    <a href="https://modern-hr-admin-dashboard.vercel.app"><strong>Live Frontend (Vercel)</strong></a> ·
+    <a href="https://modern-hr-admin-dashboard-production.up.railway.app/api/v1/health"><strong>Live Backend (Railway)</strong></a>
+  </p>
+</div>
 
-## 📸 Screenshots
+<hr />
 
-### Dashboard Experience
-![Dashboard Screenshot](./screenshots/Screenshot%202026-05-27%20190819.png)
+## 🌟 Overview
 
-### Profile & Account Management
-![Profile Screenshot](./screenshots/Screenshot%202026-05-27%20190847.png)
+The **NSQTech Enterprise HR & Admin Dashboard** is a comprehensive solution designed to handle internal operations, compliance records, and employee management. It was engineered from the ground up to be **production-ready**, boasting a secure REST API backend and an ultra-modern, responsive, matte-themed Angular frontend.
 
-### Cinematic Enterprise Authentication
-![Login Screenshot](./screenshots/Screenshot%202026-05-27%20190927.png)
+This project was built with a strong focus on:
+- **Enterprise-Grade Architecture**: Clean monorepo structure separating concerns into distinct, highly scalable micro-environments.
+- **Production-Ready Security**: Best-practice JWT authentication with HttpOnly cookies, CORS protection, and strict rate-limiting.
+- **Premium User Experience**: Silky smooth animations, a glassmorphic dark theme, skeleton loaders, and a responsive grid layout.
+
+## 📸 Platform Previews
+
+### Dashboard & Analytics
+The executive dashboard provides high-level metrics, API health monitoring, and project allocation charts.
+![Dashboard View](screenshots/dashboard.png)
+
+### User Management
+A comprehensive data table handling employee statuses, secure passwords, and department assignments.
+![User Management](screenshots/user-management.png)
+
+### Secure Authentication
+A sleek login portal protected by rate-limiters and JWT validation.
+![Login Page](screenshots/login.png)
 
 ---
 
-## 🛠️ Technology Stack & System Requirements
+## 🛠 Tech Stack & Architecture
 
-| Layer | Technology | Version | Purpose |
-|---|---|---|---|
-| **Frontend** | Angular | v21.2.x | SPA framework (Signals, standalone components, lazy routing) |
-| | Angular Material | v21.2.x | Material Design 3 core UI library |
-| | SCSS | Latest | Custom stylesheets, variables, and dark/light Material themes |
-| | RxJS | v7.8.x | Stream processing, event debouncing, and HTTP pipelines |
-| **Backend** | Node.js | v24.14.x | Lightweight, high-concurrency javascript engine |
-| | Express.js | v4.19.x | REST API server with middleware router |
-| **Database** | lowdb | v7.0.x | Flat-file JSON database (`db.json`) |
-| **Auth** | JWT | `jsonwebtoken` | Stateless session bearer tokens |
-| | bcryptjs | v2.4.x | One-way password hashing (salt rounds: 10) |
+### Frontend (Deployed on Vercel)
+- **Framework**: Angular 18+ (Standalone Components, Signals for State Management)
+- **UI Library**: Angular Material 15+ (MDC-based components)
+- **Styling**: SCSS / Vanilla CSS with custom design tokens (Dark Theme)
+- **Data Visualization**: Chart.js
+- **Features**: Command Palette, Global Search, Export to PDF/CSV, Route Guards, Interceptors.
+
+### Backend (Deployed on Railway)
+- **Runtime**: Node.js & Express.js
+- **Architecture**: Modular MVC (Routes, Controllers, Middleware, Utils)
+- **Security**: `helmet`, `cors`, `express-rate-limit`, JWT Auth
+- **Database**: Configured for MongoDB integration (currently running highly scalable mock-data fallback for immediate demoing).
+- **Features**: Request Validation, Centralized Error Handling, Secure Password Hashing (bcrypt).
 
 ---
 
-## 🚀 Quick Start Guide
+## ⚙️ Core Enterprise Features
 
-### Step 1: Initialize the Node.js API Server
+1. **Robust Authentication System**
+   - JWT-based login with secure fallbacks.
+   - Route protection for admin-only vs general user views.
+   - Persistent session management.
+
+2. **Advanced Data Management**
+   - Paginated, sortable, filterable Angular Material data tables.
+   - Dynamic user creation and editing forms.
+   - Quick-status updates.
+
+3. **Infrastructure Monitoring**
+   - Real-time `ApiHealthService` polling the backend.
+   - Visual API status indicators directly in the UI.
+   - Graceful offline error states and skeleton loaders.
+
+4. **Premium UI/UX System**
+   - Custom staggered fade animations.
+   - Intelligent command palette (`Ctrl+K`).
+   - "Empty State" and "Error State" customized components.
+
+---
+
+## 🚀 Live Demo & Credentials
+
+You can view the fully operational deployed application here:
+👉 **[Launch Live Demo](https://modern-hr-admin-dashboard.vercel.app)**
+
+### Test Credentials
+To access the dashboard, use the following administrator credentials:
+
+- **Email**: `admin@nsqtech.com`
+- **Password**: `admin123`
+
+*(The database resets mock data periodically to ensure a clean state for all viewers).*
+
+---
+
+## 💻 Local Installation & Development
+
+This repository uses a monorepo layout. You need two separate terminals to run the system locally.
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/yashwanth-sri-sai/modern-hr-admin-dashboard.git
+cd modern-hr-admin-dashboard
+```
+
+### 2. Start the Backend API
 ```bash
 cd backend
 npm install
 npm run dev
 ```
-* **Local Listener**: `http://localhost:3000`
-* **Health Check**: `http://localhost:3000/api/health`
-* **V1 Base URL**: `http://localhost:3000/api/v1`
+*The API will start on `http://localhost:3000`.*
 
-### Step 2: Initialize the Angular Client
+### 3. Start the Frontend Application
 ```bash
 cd frontend
 npm install
-npx ng serve --open
+npm start
 ```
-* **Client Portal**: `http://localhost:4200`
-* **Hot-Reloading**: Watcher triggers incremental compilation within 0.5s.
-
-### Troubleshooting a blank / white page
-
-1. **Run both servers** — backend on port `3000` and frontend on port `4200`.
-2. **Hard refresh** the browser: `Ctrl + Shift + R` (or clear cache for `localhost:4200`).
-3. **Clear stale auth data** (DevTools → Application → Local Storage → remove `nsq_auth_*` keys), then reload.
-4. If port `4200` is stuck, stop old Node processes and restart:
-   ```powershell
-   Get-NetTCPConnection -LocalPort 4200,3000 -ErrorAction SilentlyContinue |
-     ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }
-   ```
-5. Open `http://localhost:4200/auth/login` — you should see the **Welcome back** login form.
+*The Angular app will start on `http://localhost:4200` and proxy requests to the backend.*
 
 ---
 
-## 🔑 Demo Access Credentials
+## 🛡 API Architecture Overview
 
-The database is pre-seeded with bcrypt-hashed credentials. You can click the **Demo Credentials** quick-fill cards on the login page to populate these automatically:
+The Node.js Express application exposes the following secured REST endpoints:
 
-| Role | Username / User ID | Password | Display Name | Permissions |
-|---|---|---|---|---|
-| **Administrator** | `admin` | `admin123` | Super Admin | Full CRUD (User Management, Stats, Records) |
-| **General User** | `yash` | `yash123` | Yash | Read-Only (Dashboard Stats & Records table) |
-
----
-
-## 🏗️ Architecture Overview & Design Patterns
-
-The application conforms to standard enterprise layers, separating concerns cleanly:
-
-```text
-modern-hr-admin-dashboard/
-├── frontend/                     # Standalone Angular 21 Application
-│   ├── proxy.conf.json           # Dev server proxy (/api -> http://localhost:3000)
-│   └── src/app/
-│       ├── core/                 # App-wide singleton providers
-│       │   ├── guards/           # RBAC guards (AuthGuard, AdminGuard)
-│       │   ├── interceptors/     # Http filters (Bearer Token injection, Global spinner, 401 Catchers)
-│       │   └── services/         # State engines (AuthService, LoadingService, ThemeService)
-│       ├── shared/               # Reusable dumb components & pipes
-│       │   ├── components/       # ErrorState, EmptyState, Command Palette, SkeletonLoader
-│       │   └── pipes/            # Custom utility pipes
-│       ├── layouts/              # Routing outlets (AuthLayout, ShellLayout)
-│       ├── auth/                 # Lazy-loaded login screen
-│       ├── dashboard/            # Lazy-loaded metrics & record table views
-│       ├── profile/              # User profile and settings management
-│       └── admin/                # Lazy-loaded user creation & audit logs (RBAC protected)
-└── backend/                      # Express.js REST API
-    ├── data/
-    │   └── db.json               # lowdb JSON flat-file database
-    └── src/
-        ├── routes/               # API route maps (auth, users, records)
-        ├── controllers/          # Validation and request adapters
-        ├── services/             # CRUD queries, hashing, and business logic
-        ├── middleware/           # RBAC permissions, JWT verify, structured errors
-        └── utils/                # lowdb database loader & JWT tools
-```
-
-### Key Architectural Decisions
-1. **Angular Signals State Management**: Instead of heavy state managers (like NgRx), this application uses native Angular Signals to coordinate reactive properties, resulting in instant UI updates with zero change detection overhead.
-2. **Strict ChangeDetectionStrategy.OnPush**: Used globally to ensure maximum rendering performance.
-3. **Versioned API Gateway**: All backend endpoints are versioned under `/api/v1` to follow enterprise maturity standards.
+- `POST /api/v1/auth/login` - Authenticate and retrieve token.
+- `GET /api/v1/health` - Public endpoint for uptime monitoring.
+- `GET /api/v1/users` - Retrieve paginated user directory.
+- `POST /api/v1/users` - Register a new employee.
+- `GET /api/v1/dashboard/stats` - Fetch aggregate platform metrics.
 
 ---
-
-## ✨ Enterprise Feature List
-
-* **Secure Authentication Flow**: Fully mocked JWT-based stateless authorization with route guards, role interception, and automatic session expiration handling.
-* **Role-Based Access Control (RBAC)**: Separate permissions for `Administrator` vs `General User`, dynamically shifting routing and sidebar visibility.
-* **Advanced Table Systems**: Fully functional Angular Material tables with sorting, filtering, sticky headers, quick-actions, and pagination.
-* **Premium Dashboard Analytics**: Responsive Chart.js integrations with floating stat cards driven by a robust mock API.
-* **Command Palette**: A keyboard-driven (Ctrl+K) command palette for rapid navigation, global searching, and executing quick actions across the platform.
-* **Dynamic Exporting**: Built-in functionality to export table states to CSV and PDF formats using client-side generation.
-* **Cinematic UX & Motion Design**: Highly refined micro-animations, matte dark-mode surfaces, staggered fade effects, and zero layout shift loading states (Skeletons).
-* **Dual Theme Engine**: Seamless toggling between light mode and a deep matte dark mode built on CSS custom variables.
-
----
-
-## 🔒 Security Hardening Review
-
-1. **Helmet.js Integration**: Automatically sets HTTP headers to protect against clickjacking, MIME sniffing, and cross-site scripting (XSS).
-2. **CORS Configuration**: Restricts API calls strictly to trusted origins (`http://localhost:4200`).
-3. **Stateless JWT Authorization**: Signs tokens using `HS256` with an 8-hour expiry. Tokens are transmitted inside the `Authorization: Bearer <token>` header.
-4. **Self-Deletion Protection**: Prevents admins from deleting their own accounts (validated both in the database service and disabled on the table control UI).
-5. **Dynamic 401 Logout**: If a session expires, the interceptor immediately wipes local session values and triggers a redirect to the login screen with a Warning Snackbar.
-
----
-
-## 🚀 UX Polish & Micro-Animations
-
-* **Dark & Light Themes**: The navbar features an animated theme-switching control that saves preference states inside `localStorage`. CSS transitions animate theme toggles smoothly.
-* **Skeleton Cards**: Shimmer components show skeleton outlines for tables and charts during network calls to prevent cumulative layout shifts (CLS).
-* **Glassmorphic Styling**: Elegant backdrops, subtle border gradients, and blurred cards create a modern SaaS application style.
-* **Friendly UX fallbacks**: Handles blank filters and connection timeouts gracefully via custom `ErrorState` and `EmptyState` panels.
-
----
-
-## 🧪 Pre-Submission Quality Checklists
-
-### 1. Functional QA Verification
-- [x] Verify that hitting `/app` without a token redirects to `/auth/login`.
-- [x] Verify that logging in as General User (`yash`) redirects to Dashboard and hides "User Management" from the sidebar.
-- [x] Verify that General User cannot hit `/app/admin` via direct URL typing (redirects to Dashboard).
-- [x] Verify that Administrator (`admin`) sees "User Management" and can create/update/delete users.
-- [x] Verify that Admin cannot delete their own row (the button is disabled and displays a warning tooltip).
-
-### 2. Technical Performance Checklist
-- [x] Run `npm run build` inside `frontend/` to confirm zero compilation warnings or type-mismatch errors.
-- [x] Open Chrome DevTools and verify that no unhandled console errors occur.
-- [x] Verify that lazy-load routing splits bundle outputs (e.g. `login-component`, `dashboard-component` bundles are loaded dynamically).
-- [x] Ensure that rate-limiting blocks requests on spamming endpoints.
-- [x] Confirm theme states persist cleanly across page reloads.
+<div align="center">
+  <i>Engineered for Performance. Built for the Enterprise.</i>
+</div>
