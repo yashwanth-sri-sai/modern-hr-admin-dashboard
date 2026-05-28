@@ -1,9 +1,9 @@
 import jwt from 'jsonwebtoken';
 import 'dotenv/config';
 
-const SECRET = process.env.JWT_SECRET;
-
-console.log('JWT_SECRET VALUE:', SECRET);
+const SECRET =
+  process.env.JWT_SECRET ||
+  'nsqtech_dashboard_super_secret_2026';
 
 const EXPIRES_IN = process.env.JWT_EXPIRES_IN || '8h';
 
