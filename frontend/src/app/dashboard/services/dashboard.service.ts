@@ -12,13 +12,14 @@ export class DashboardService {
   private http = inject(HttpClient);
 
   getStats(): Observable<DashboardStats> {
+    const params = new HttpParams().set('delay', '1500'); // Showcase async loading as requested
     return this.http
-      .get<ApiResponse<DashboardStats>>(`${this.USERS_API}/stats`)
+      .get<ApiResponse<DashboardStats>>(`${this.USERS_API}/stats`, { params })
       .pipe(map((res) => res.data));
   }
 
   getRecords(filters?: { category?: string; status?: string }): Observable<Record[]> {
-    let params = new HttpParams();
+    let params = new HttpParams().set('delay', '2000'); // Showcase async loading as requested
     if (filters?.category) params = params.set('category', filters.category);
     if (filters?.status) params = params.set('status', filters.status);
 

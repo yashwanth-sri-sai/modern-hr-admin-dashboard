@@ -193,8 +193,9 @@ export class UsersService {
   /**
    * Returns all records with optional category/status filter.
    */
-  async getRecords(category = '', status = '') {
-    await delay(1000);
+  async getRecords(category = '', status = '', delayMs) {
+    const delayAmount = delayMs ? parseInt(delayMs, 10) : 1000;
+    await delay(delayAmount);
 
     const db = await getDb();
     let records = [...db.data.records];
@@ -208,8 +209,9 @@ export class UsersService {
   /**
    * Returns dashboard summary stats.
    */
-  async getDashboardStats() {
-    await delay(500);
+  async getDashboardStats(delayMs) {
+    const delayAmount = delayMs ? parseInt(delayMs, 10) : 500;
+    await delay(delayAmount);
 
     const db = await getDb();
     const users = db.data.users;

@@ -83,8 +83,8 @@ export async function deleteUser(req, res, next) {
 /** GET /api/users/records — dashboard records table */
 export async function getRecords(req, res, next) {
   try {
-    const { category, status } = req.query;
-    const records = await usersService.getRecords(category, status);
+    const { category, status, delay } = req.query;
+    const records = await usersService.getRecords(category, status, delay);
     res.json({ success: true, data: records, total: records.length });
   } catch (err) {
     next(err);
@@ -104,7 +104,8 @@ export async function updateRecord(req, res, next) {
 /** GET /api/users/stats — dashboard summary cards */
 export async function getDashboardStats(req, res, next) {
   try {
-    const stats = await usersService.getDashboardStats();
+    const { delay } = req.query;
+    const stats = await usersService.getDashboardStats(delay);
     res.json({ success: true, data: stats });
   } catch (err) {
     next(err);
