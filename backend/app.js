@@ -13,29 +13,36 @@ import { apiLimiter, loginLimiter } from './src/middleware/rate-limiter.middlewa
 import { errorHandler, notFound } from './src/middleware/error.middleware.js';
 
 const app = express();
+app.set('trust proxy', 1);
 
 // ─── Body Parsing ────────────────────────────────────────────────────────────
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
 // ─── CORS ─────────────────────────────────────────────────────────────────────
-const corsOptions = {
-  origin: [
-    'https://modern-hr-admin-dashboard.vercel.app',
-    'http://localhost:4200'
-  ],
+const allowedOrigins = [
+  'https://modern-hr-admin-dashboard.vercel.app',
+  'https://modern-hr-admin-dashboard-cn9duux9v-yashwanth-sri-sais-projects.vercel.app'
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`CORS blocked origin: ${origin}`));
+    }
+  },
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-};
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: [
+    'Content-Type',
+    'Authorization',
+    'X-Requested-With'
+  ]
+}));
 
-// If ALLOWED_ORIGINS env var exists, add them to the array
-if (process.env.ALLOWED_ORIGINS) {
-  process.env.ALLOWED_ORIGINS.split(',').forEach(o => corsOptions.origin.push(o.trim()));
-}
-
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // CRITICAL: Explicitly handle preflight requests
+app.options('*', cors()); // CRITICAL: Explicitly handle preflight requests
 
 // ─── Security & Logging ───────────────────────────────────────────────────────
 app.use(helmet());
